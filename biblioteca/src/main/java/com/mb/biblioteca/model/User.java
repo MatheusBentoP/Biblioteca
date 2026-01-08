@@ -9,14 +9,14 @@ import java.util.Set;
 @Entity
 @Table(name = "usuarios")
 @Data
-public class User {
+public class User  {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     private String name;
 
-    private String email;
+    private String enrollment;
 
     private String password;
 

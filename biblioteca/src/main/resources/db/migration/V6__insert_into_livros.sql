@@ -1,0 +1,32 @@
+
+INSERT INTO livros (title, author, pages, publisher, genre) VALUES
+('A Guerra dos Tronos', 'George R.R. Martin', 592, 'Suma', 'FANTASY'),
+('O Festim dos Corvos', 'George R.R. Martin', 752, 'Suma', 'FANTASY'),
+('O Chamado de Cthulhu', 'H.P. Lovecraft', 160, 'DarkSide', 'TERROR'),
+('O Apanhador no Campo de Centeio', 'J.D. Salinger', 214, 'Little, Brown', 'DRAMA'),
+('Cem Anos de Solidão', 'Gabriel García Márquez', 432, 'Record', 'FANTASY'),
+('O Velho e o Mar', 'Ernest Hemingway', 128, 'Bertrand', 'DRAMA'),
+('O Processo', 'Franz Kafka', 304, 'Companhia das Letras', 'DRAMA'),
+('A Metamorfose', 'Franz Kafka', 96, 'Companhia das Letras', 'DRAMA'),
+('O Estrangeiro', 'Albert Camus', 160, 'Record', 'DRAMA'),
+('Crime e Castigo', 'Fiódor Dostoiévski', 672, 'Editora 34', 'DRAMA'),
+
+('O Idiota', 'Fiódor Dostoiévski', 656, 'Editora 34', 'DRAMA'),
+('O Conde de Monte Cristo', 'Alexandre Dumas', 1312, 'Zahar', 'DRAMA'),
+('Os Miseráveis', 'Victor Hugo', 1488, 'Martin Claret', 'DRAMA'),
+('A Divina Comédia', 'Dante Alighieri', 798, 'Nova Fronteira', 'FANTASY'),
+('O Príncipe', 'Nicolau Maquiavel', 160, 'Penguin', 'DRAMA'),
+('O Capital', 'Karl Marx', 832, 'Boitempo', 'DRAMA'),
+('A Arte da Guerra', 'Sun Tzu', 128, 'Penguin', 'DRAMA'),
+('O Mundo de Sofia', 'Jostein Gaarder', 512, 'Companhia das Letras', 'DRAMA'),
+('O Pequeno Príncipe', 'Antoine de Saint-Exupéry', 96, 'Agir', 'FANTASY'),
+('Alice no País das Maravilhas', 'Lewis Carroll', 200, 'Zahar', 'FANTASY'),
+
+('As Crônicas de Nárnia', 'C.S. Lewis', 752, 'WMF Martins Fontes', 'FANTASY'),
+('O Silmarillion', 'J.R.R. Tolkien', 480, 'HarperCollins', 'FANTASY'),
+('O Guia do Mochileiro das Galáxias', 'Douglas Adams', 208, 'Arqueiro', 'SCIFI'),
+('Blade Runner', 'Philip K. Dick', 288, 'Aleph', 'SCIFI'),
+('Solaris', 'Stanislaw Lem', 256, 'Aleph', 'SCIFI'),
+('A Máquina do Tempo', 'H.G. Wells', 160, 'Penguin', 'SCIFI'),
+('O Médico e o Monstro', 'Robert Louis Stevenson', 144, 'Penguin', 'TERROR'),
+('O Retrato de Dorian Gray', 'Oscar Wilde', 272, 'Penguin', 'DRAMA');
