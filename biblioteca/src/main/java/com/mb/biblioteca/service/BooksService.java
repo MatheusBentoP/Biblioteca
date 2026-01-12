@@ -43,6 +43,16 @@ public class BooksService {
         return BooksMapper.toDto(books);
     }
 
+
+    public BooksResponse uptadeLivro(Long id, BooksRequest request){
+        Books livroAserAlterado = booksRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Livro não encontrado"));
+            BooksMapper.updadetoEntity(livroAserAlterado,request);
+
+            Books LivroAlterado = booksRepository.save(livroAserAlterado);
+            return BooksMapper.toDto(livroAserAlterado);
+    }
+
     public void deletarPorId(Long id){
         if (!booksRepository.existsById(id)){
             throw new RuntimeException("Livro não encontrado");

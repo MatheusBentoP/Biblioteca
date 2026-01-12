@@ -17,6 +17,17 @@ public class BooksMapper {
         return book;
     }
 
+    public static Books updadetoEntity(Books book, BooksRequest request){
+        book.setTitle(request.title());
+        book.setAuthor(request.author());
+        book.setPages(request.pages());
+        book.setGenres(request.genres());
+        book.setPublisher(request.publisher());
+
+        return book;
+    }
+
+
     public static BooksResponse toDto(Books books){
         return new BooksResponse(
                         books.getId(),
@@ -26,4 +37,6 @@ public class BooksMapper {
                 books.getPublisher(),
                 books.getGenres());
     }
+
+
 }

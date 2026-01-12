@@ -40,6 +40,12 @@ public class BooksController {
         return ResponseEntity.ok(booksService.mostrarPorId(id));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<BooksResponse> updateBooks(@PathVariable Long id, @RequestBody BooksRequest booksRequest){
+        BooksResponse update = booksService.uptadeLivro(id, booksRequest);
+        return ResponseEntity.ok(update);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         booksService.deletarPorId(id);
