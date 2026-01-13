@@ -25,5 +25,47 @@ public class User  {
     private Set<Role> roles = new HashSet<>();
 
 
+    public User() {
+    }
 
+    public User(Long id, String nome, String matricula, Set<Role> roles) {
+        this.id = id;
+        this.nome = nome;
+        this.matricula = matricula;
+        this.roles = roles;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }
+
+
