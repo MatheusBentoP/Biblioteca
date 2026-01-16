@@ -3,7 +3,7 @@ spring:
     name: biblioteca
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/biblioteca
+    url: jdbc:postgresql://localhost:5432/bibliotecaTeste
     username: postgres
     password: acer12
     driver-class-name: org.postgresql.Driver

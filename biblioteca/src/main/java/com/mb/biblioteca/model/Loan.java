@@ -18,6 +18,7 @@ public class Loan {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dataDevolucao;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "livros_id", nullable = false)
     private Books livros;

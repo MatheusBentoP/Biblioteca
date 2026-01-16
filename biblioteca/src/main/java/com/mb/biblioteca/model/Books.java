@@ -1,7 +1,11 @@
 package com.mb.biblioteca.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "livros")
@@ -20,16 +24,21 @@ public class Books {
     @Column(name = "genre")
     public Genres genres;
 
+    @OneToMany(mappedBy = "livros", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Loan> emprestimo = new ArrayList<>();
+
     public Books() {
     }
 
-    public Books(Long id, String title, String author, Integer pages, String publisher, Genres genres) {
+    public Books(Long id, String title, String author, Integer pages, String publisher, Genres genres, List<Loan> emprestimos) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.pages = pages;
         this.publisher = publisher;
         this.genres = genres;
+        this.emprestimo = emprestimos;
     }
 
     public Long getId() {
@@ -78,5 +87,13 @@ public class Books {
 
     public void setGenres(Genres genres) {
         this.genres = genres;
+    }
+
+    public List<Loan> getEmprestimo() {
+        return emprestimo;
+    }
+
+    public void setEmprestimo(List<Loan> emprestimo) {
+        this.emprestimo = emprestimo;
     }
 }
