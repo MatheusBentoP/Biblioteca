@@ -1,6 +1,7 @@
 package com.mb.biblioteca.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.mb.biblioteca.model.enuns.LoanStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

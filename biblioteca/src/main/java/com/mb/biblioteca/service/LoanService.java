@@ -5,7 +5,7 @@ import com.mb.biblioteca.dto.response.LoanResponse;
 import com.mb.biblioteca.mapper.LoanMapper;
 import com.mb.biblioteca.model.Books;
 import com.mb.biblioteca.model.Loan;
-import com.mb.biblioteca.model.LoanStatus;
+import com.mb.biblioteca.model.enuns.LoanStatus;
 import com.mb.biblioteca.model.User;
 import com.mb.biblioteca.repository.IBooksRepository;
 import com.mb.biblioteca.repository.ILoanRepository;

@@ -1,8 +1,10 @@
 package com.mb.biblioteca.dto.request;
 
-import com.mb.biblioteca.model.Role;
+import com.mb.biblioteca.model.enuns.Role;
+import jakarta.validation.constraints.NotEmpty;
 
-import java.util.Set;
-
-public record UserRequest(String nome, String matricula, Set<Role> role) {
+public record UserRegisterRequest(@NotEmpty String nome,
+                                  @NotEmpty String matricula,
+                                  @NotEmpty String senha,
+                                  Role role) {
 }

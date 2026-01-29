@@ -1,23 +1,26 @@
 package com.mb.biblioteca.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.mb.biblioteca.model.enuns.Role;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "usuarios")
 @Data
-public class User {
+public class User implements UserDetails {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
+
+    private String senha;
 
     private String matricula;
 
@@ -35,10 +38,11 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String nome, String matricula, Set<Role> roles, List<Loan> emprestimos) {
+    public User(Long id, String nome, String matricula, String senha, Set<Role> roles, List<Loan> emprestimos) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;
+        this.senha = senha;
         this.roles = roles;
         this.emprestimos = emprestimos;
     }
@@ -67,6 +71,14 @@ public class User {
         this.matricula = matricula;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     public Set<Role> getRoles() {
         return roles;
     }
@@ -81,5 +93,41 @@ public class User {
 
     public void setEmprestimos(List<Loan> emprestimos) {
         this.emprestimos = emprestimos;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream().map(r -> new SimpleGrantedAuthority(r.name())).toList();
+    }
+
+    @Override
+    public String getPassword() {
+        return "";
+    }
+
+
+    @Override
+    public String getUsername() {
+        return "";
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

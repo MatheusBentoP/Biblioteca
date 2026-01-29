@@ -1,6 +1,6 @@
 package com.mb.biblioteca.dto.response;
 
-import com.mb.biblioteca.model.Genres;
+import com.mb.biblioteca.model.enuns.Genres;
 
 public record BooksResponse(
          Long id,

@@ -1,4 +1,4 @@
-package com.mb.biblioteca.model;
+package com.mb.biblioteca.model.enuns;
 
 public enum Role {
     ROLE_ADMIN,

@@ -1,6 +1,7 @@
 package com.mb.biblioteca.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.mb.biblioteca.model.enuns.Genres;
 import jakarta.persistence.*;
 import lombok.Data;
 
