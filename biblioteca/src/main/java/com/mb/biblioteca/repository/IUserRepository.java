@@ -13,5 +13,5 @@ import java.util.Optional;
 public interface IUserRepository extends JpaRepository<User, Long> {
     Page<User> findAll(Pageable pageable);
 
-    Optional<UserDetails>findUserByEmail(String username);
+    Optional<UserDetails> findUserBymatricula(String username);
 }
