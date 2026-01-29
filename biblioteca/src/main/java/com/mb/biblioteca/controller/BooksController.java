@@ -23,7 +23,7 @@ public class BooksController {
         this.booksService = booksService;
     }
 
-    //@PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping
     public ResponseEntity<BooksResponse> register(@RequestBody BooksRequest booksRequest){
         BooksResponse books = booksService.cadastrar(booksRequest);

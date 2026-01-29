@@ -10,6 +10,8 @@ import com.mb.biblioteca.model.User;
 import com.mb.biblioteca.repository.IBooksRepository;
 import com.mb.biblioteca.repository.ILoanRepository;
 import com.mb.biblioteca.repository.IUserRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -29,10 +31,13 @@ public class LoanService {
 
     public LoanResponse emprestar(LoanRequest loanRequest){
 
-        User usario = userRepository.findById(loanRequest.usuarioId())
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        User usario = userRepository.findByNome(username)
                 .orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
 
-        Books books = booksRepository.findById(loanRequest.bookId())
+        Books books = booksRepository.findByTitle(loanRequest.titulo())
                 .orElseThrow(() ->new RuntimeException("Livro não encontrado"));
 
        if (loanRepository.existsByLivrosAndStatus(books, LoanStatus.ATIVO)){
