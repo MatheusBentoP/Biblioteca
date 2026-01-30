@@ -4,6 +4,7 @@ CREATE TABLE emprestimo (
     data_devolucao DATE,
     livros_id BIGINT NOT NULL,
     usuarios_id BIGINT NOT NULL,
+
     emprestimo VARCHAR(50) NOT NULL,
 
     CONSTRAINT fk_emprestimo_livros

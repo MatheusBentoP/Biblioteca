@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public record LoanResponse(
         Long id,
         String tituloLivro,
-        User usuario,
+        String usuario,
         LocalDate dataEmprestimo,
         LocalDate dataDevolucao,
         LoanStatus status

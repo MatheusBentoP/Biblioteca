@@ -1,4 +1,6 @@
 package com.mb.biblioteca.dto.request;
 
-public record LoanRequest(String titulo) {
+public record LoanRequest(
+        Long livroId,
+        String tituloDoLivro) {
 }

@@ -9,7 +9,7 @@ public class LoanMapper {
         return new LoanResponse(
                 emprestimo.getId(),
                 emprestimo.getLivros().getTitle(),
-                emprestimo.getAlunos(),
+                emprestimo.getAlunos().getNome(),
                 emprestimo.getDataEmprestimo(),
                 emprestimo.getDataDevolucao(),
                 emprestimo.getStatus()

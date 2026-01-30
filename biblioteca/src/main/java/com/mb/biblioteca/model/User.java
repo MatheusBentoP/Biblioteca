@@ -47,6 +47,8 @@ public class User implements UserDetails {
         this.emprestimos = emprestimos;
     }
 
+
+
     public Long getId() {
         return id;
     }
@@ -86,6 +88,10 @@ public class User implements UserDetails {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
+
+
 
     public List<Loan> getEmprestimos() {
         return emprestimos;
