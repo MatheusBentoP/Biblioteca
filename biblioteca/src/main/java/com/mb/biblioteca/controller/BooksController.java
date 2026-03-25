@@ -1,8 +1,11 @@
 package com.mb.biblioteca.controller;
 
+import com.mb.biblioteca.config.SecurityConfig;
 import com.mb.biblioteca.dto.request.BooksRequest;
 import com.mb.biblioteca.dto.response.BooksResponse;
 import com.mb.biblioteca.service.BooksService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -15,6 +18,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/livros")
+@Tag(name = "livros", description = "Controlador para registrar e editar dados de livros")
+@SecurityRequirement(name = SecurityConfig.SECURITY)
 public class BooksController {
 
     private final BooksService booksService;

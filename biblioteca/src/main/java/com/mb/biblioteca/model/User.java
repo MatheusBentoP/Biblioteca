@@ -35,16 +35,23 @@ public class User implements UserDetails {
     private List<Loan> emprestimos = new ArrayList<>();
 
 
+
+    @OneToMany(mappedBy = "notas", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private  List<Score> notas = new ArrayList<>();
+
+
     public User() {
     }
 
-    public User(Long id, String nome, String matricula, String senha, Set<Role> roles, List<Loan> emprestimos) {
+    public User(Long id, String nome, String matricula, String senha, Set<Role> roles, List<Loan> emprestimos, List<Score> notas) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;
         this.senha = senha;
         this.roles = roles;
         this.emprestimos = emprestimos;
+        this.notas = notas;
     }
 
 
@@ -89,9 +96,13 @@ public class User implements UserDetails {
         this.roles = roles;
     }
 
+    public List<Score> getNotas() {
+        return notas;
+    }
 
-
-
+    public void setNotas(List<Score> notas) {
+        this.notas = notas;
+    }
 
     public List<Loan> getEmprestimos() {
         return emprestimos;

@@ -1,5 +1,6 @@
 package com.mb.biblioteca.controller;
 
+import com.mb.biblioteca.config.SecurityConfig;
 import com.mb.biblioteca.config.TokenConfig;
 import com.mb.biblioteca.dto.request.LoginRequest;
 import com.mb.biblioteca.dto.request.UserRegisterRequest;
@@ -8,6 +9,8 @@ import com.mb.biblioteca.dto.response.UserRegisterResponse;
 import com.mb.biblioteca.model.User;
 import com.mb.biblioteca.model.enuns.Role;
 import com.mb.biblioteca.repository.IUserRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.apache.catalina.connector.Response;
 import org.springframework.http.HttpStatus;
@@ -26,6 +29,8 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/auth")
+@Tag(name = "auth")
+
 public class AuthController {
     private final IUserRepository userRepository;
     private final PasswordEncoder passwordEncoder;

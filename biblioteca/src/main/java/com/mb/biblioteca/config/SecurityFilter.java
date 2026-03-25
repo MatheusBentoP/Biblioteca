@@ -26,9 +26,12 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String authorizedHeader = request.getHeader("Authorization");
+        System.out.println(">>> Header: " + authorizedHeader);
         if (Strings.isNotEmpty(authorizedHeader) && authorizedHeader.startsWith("Bearer ")){
             String token = authorizedHeader.substring("Bearer ".length());
             Optional<JWTUserData> optUser = tokenConfig.validateToken(token);
+
+            System.out.println(">>> Token válido: " + optUser.isPresent());
 
             if (optUser.isPresent()) {
                 JWTUserData userData = optUser.get();
